@@ -11,7 +11,9 @@ module.exports = function (config) {
   let markdown = markdownIt({
     html: true,
     linkify: true,
+    typographer: true,
   });
+  config.setLibrary("md", markdown);
   config.addFilter("markdown", (value) => markdown.render(value));
 
   // Formatting for dates
@@ -34,6 +36,7 @@ module.exports = function (config) {
   });
 
   // Pass through static assets
+  config.addPassthroughCopy("./src/site/admin");
   config.addPassthroughCopy("./src/site/images");
   config.addPassthroughCopy("./src/site/_redirects");
   config.addPassthroughCopy("./src/site/_headers");

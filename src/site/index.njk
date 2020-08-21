@@ -1,6 +1,29 @@
 ---
-layout: layouts/_base.njk
 title: jplace's 11ty Starter
 ---
 
+<!-- prettier-ignore -->
+{% extends "layouts/_base.njk" %}
+
+<!-- prettier-ignore -->
+{% block headScripts %}
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<!-- prettier-ignore -->
+{% endblock %}
+
+<!-- prettier-ignore -->
+{% block body %}
 <h1 class="text-6xl">Hello, World!</h1>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+<!-- prettier-ignore -->
+{% endblock %}

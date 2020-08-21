@@ -1,6 +1,6 @@
-# 11ty Starter
+# Xenia Nomdad
 
-This is jplace's [11ty](https://www.11ty.dev/) starter. It's configured to be deployed to [Netlify](https://www.netlify.com/).
+Blog about Xenia's time as a nomad.
 
 ## Build
 
