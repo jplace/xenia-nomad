@@ -38,6 +38,7 @@ module.exports = function (config) {
   // Pass through static assets
   config.addPassthroughCopy("./src/site/admin");
   config.addPassthroughCopy("./src/site/images");
+  config.addPassthroughCopy("./src/site/fonts");
   config.addPassthroughCopy("./src/site/_redirects");
   config.addPassthroughCopy("./src/site/_headers");
 

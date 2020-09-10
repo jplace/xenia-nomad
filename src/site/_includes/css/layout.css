@@ -1,0 +1,6 @@
+.menu-item:not(:last-child) {
+  &::after {
+    @apply inline-block whitespace-pre;
+    content: " | ";
+  }
+}

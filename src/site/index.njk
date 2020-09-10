@@ -1,9 +1,18 @@
 ---
-title: jplace's 11ty Starter
+title: Adventure XL
 ---
 
 <!-- prettier-ignore -->
 {% extends "layouts/_base.njk" %}
+
+<!-- prettier-ignore -->
+{% macro container(additionalClasses="") %}
+<div class="md:container md:mx-auto {{ additionalClasses }}">
+  <!-- prettier-ignore -->
+  {{ caller() }}
+</div>
+<!-- prettier-ignore -->
+{% endmacro %}
 
 <!-- prettier-ignore -->
 {% block headScripts %}
@@ -13,7 +22,22 @@ title: jplace's 11ty Starter
 
 <!-- prettier-ignore -->
 {% block body %}
-<h1 class="text-6xl">Hello, World!</h1>
+<!-- prettier-ignore -->
+{% call container("px-4 pt-16 pb-6") %}
+<h1 class="text-neon-blue font-display text-6xl text-center">
+  Adventure Bitch
+</h1>
+<!-- prettier-ignore -->
+{% endcall %}
+<ul class="text-center">
+  <li class="inline-block menu-item"><a href="/">Home</a></li>
+  <li class="inline-block menu-item"><a href="/about">About</a></li>
+  <li class="inline-block menu-item">
+    <a href="https://www.instagram.com/nofilterzee/">Instagram</a>
+  </li>
+</ul>
+<!-- prettier-ignore -->
+{% call container("px-4 py-6 text-black bg-white") %}
 <ul>
   <!-- prettier-ignore -->
   {% for post in collections.post %}
@@ -23,6 +47,19 @@ title: jplace's 11ty Starter
   <!-- prettier-ignore -->
   {% endfor %}
 </ul>
+<!-- prettier-ignore -->
+{% endcall %}
+<!-- prettier-ignore -->
+{% call container("px-4 py-6") %}
+<ul class="text-center">
+  <li class="inline-block menu-item"><a href="/">Home</a></li>
+  <li class="inline-block menu-item"><a href="/about">About</a></li>
+  <li class="inline-block menu-item">
+    <a href="https://www.instagram.com/nofilterzee/">Instagram</a>
+  </li>
+</ul>
+<!-- prettier-ignore -->
+{% endcall %}
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", (user) => {
