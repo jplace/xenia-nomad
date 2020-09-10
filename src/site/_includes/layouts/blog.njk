@@ -1,0 +1,9 @@
+<!-- prettier-ignore -->
+{% extends "layouts/_base.njk" %}
+
+<!-- prettier-ignore -->
+{% block content %}
+<!-- prettier-ignore -->
+{{ content | markdown | safe }}
+<!-- prettier-ignore -->
+{% endblock %}

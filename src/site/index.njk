@@ -14,6 +14,15 @@ title: jplace's 11ty Starter
 <!-- prettier-ignore -->
 {% block body %}
 <h1 class="text-6xl">Hello, World!</h1>
+<ul>
+  <!-- prettier-ignore -->
+  {% for post in collections.post %}
+  <li>
+    <a href="{{ post.url }}">{{ post.data.title }}</a>
+  </li>
+  <!-- prettier-ignore -->
+  {% endfor %}
+</ul>
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", (user) => {
