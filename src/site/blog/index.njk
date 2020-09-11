@@ -1,3 +1,12 @@
+---
+title: Adventure Bitch
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
+---
+
 <!-- prettier-ignore -->
 {% extends "layouts/_page.njk" %}
 
@@ -14,13 +23,33 @@
       </p>
       <p>
         <span class="text-sm"
-          >Posted on {{ page.date.toISOString() | readableDate }}
+          >Posted on {{ post.date.toISOString() | readableDate }}
         </span>
       </p></a
     >
   </li>
   <!-- prettier-ignore -->
   {% endfor %}
+</ul>
+<ul class="flex">
+  <!-- prettier-ignore -->
+  {% if pagination.href.next %}
+  <li>
+    <a href="{{ pagination.href.next }}">
+      Older
+    </a>
+  </li>
+  <!-- prettier-ignore -->
+  {% endif %}
+  <!-- prettier-ignore -->
+  {% if pagination.href.previous %}
+  <li>
+    <a href="{{ pagination.href.previous }}">
+      Newer
+    </a>
+  </li>
+  <!-- prettier-ignore -->
+  {% endif %}
 </ul>
 <!-- prettier-ignore -->
 {% endblock %}

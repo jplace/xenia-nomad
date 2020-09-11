@@ -1,5 +1,10 @@
 ---
-title: Adventure XL
+title: Adventure Bitch
+pagination:
+  data: collections.post
+  size: 10
+  reverse: true
+  alias: posts
 ---
 
 <!-- prettier-ignore -->
@@ -13,11 +18,21 @@ title: Adventure XL
 
 <!-- prettier-ignore -->
 {% block content %}
+<h1 class="text-5xl leading-tight mb-4">Recent posts</h1>
 <ul>
   <!-- prettier-ignore -->
-  {% for post in collections.post %}
+  {% for post in posts %}
   <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
+    <a class="block no-underline" href="{{ post.url }}"
+      ><p>
+        <span class="underline">{{ post.data.title }}</span>
+      </p>
+      <p>
+        <span class="text-sm"
+          >Posted on {{ post.date.toISOString() | readableDate }}
+        </span>
+      </p></a
+    >
   </li>
   <!-- prettier-ignore -->
   {% endfor %}
