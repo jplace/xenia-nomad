@@ -15,9 +15,8 @@ collections:
           label: "Layout",
           name: "layout",
           widget: "hidden",
-          default: "layouts/blog.njk",
+          default: "layouts/post.njk",
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
