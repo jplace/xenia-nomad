@@ -9,9 +9,12 @@
 <!-- prettier-ignore -->
 {% call container.render("px-4 border-gray border-l border-r overflow-auto home-hero") %}
 <a class="block no-underline mt-16 mb-4" href="/"
-  ><h1 class="home-hero-text">
-    Adventure Bitch
-  </h1></a
+  ><div class="home-hero_banner">
+    <div class="home-hero_banner-bg"></div>
+    <h1 class="home-hero_banner-text">
+      Adventure Bitch
+    </h1>
+  </div></a
 >
 <ul class="text-center mb-4">
   <li class="text-lg inline-block menu-item">
@@ -35,7 +38,7 @@
 <!-- prettier-ignore -->
 {% endcall %}
 <!-- prettier-ignore -->
-{% call container.render("px-4 py-4 text-center border-black border-l border-r bg-forest-green") %}
+{% call container.render("px-4 py-4 text-center border-gray border-l border-r footer-bg") %}
 <span class="text-sm"
   >Made by <a href="https://jplace.github.io/">jplace</a> with
   <a href="https://www.11ty.dev/">11ty</a>,
