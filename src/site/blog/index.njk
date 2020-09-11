@@ -3,13 +3,24 @@
 
 <!-- prettier-ignore -->
 {% block content %}
-<div class="mb-8">
-  <h1 class="text-5xl leading-tight mb-2">{{ title }}</h1>
-  <p class="text-sm">Posted on {{ page.date.toISOString() | readableDate }}</p>
-</div>
-<div class="md-container">
+<h1 class="text-5xl leading-tight mb-4">Posts</h1>
+<ul>
   <!-- prettier-ignore -->
-  {{ content | markdown | safe }}
-</div>
+  {% for post in collections.post %}
+  <li>
+    <a class="block no-underline" href="{{ post.url }}"
+      ><p>
+        <span class="underline">{{ post.data.title }}</span>
+      </p>
+      <p>
+        <span class="text-sm"
+          >Posted on {{ page.date.toISOString() | readableDate }}
+        </span>
+      </p></a
+    >
+  </li>
+  <!-- prettier-ignore -->
+  {% endfor %}
+</ul>
 <!-- prettier-ignore -->
 {% endblock %}
