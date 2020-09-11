@@ -6,49 +6,51 @@
 
 <!-- prettier-ignore -->
 {% block body %}
-<!-- prettier-ignore -->
-{% call container.render("px-4 border-gray border-l border-r overflow-auto home-hero") %}
-<a class="block no-underline mt-16 mb-4" href="/"
-  ><div class="home-hero_banner">
-    <div class="home-hero_banner-bg"></div>
-    <h1 class="home-hero_banner-text">
-      Adventure Bitch
-    </h1>
-  </div></a
->
-<ul class="text-center mb-4">
-  <li class="text-lg inline-block menu-item">
-    <a class="no-underline" href="/blog">POSTS</a>
-  </li>
-  <li class="text-lg inline-block menu-item">
-    <a class="no-underline" href="/about">ABOUT</a>
-  </li>
-  <li class="text-lg inline-block menu-item">
-    <a class="no-underline" href="https://www.instagram.com/nofilterzee/"
-      >INSTAGRAM</a
-    >
-  </li>
-</ul>
-<!-- prettier-ignore -->
-{% endcall %}
-<!-- prettier-ignore -->
-{% call container.render("px-8 pt-6 pb-8 text-black border-gray border-l border-r bg-white") %}
-<!-- prettier-ignore -->
-{% block content %}
-<!-- prettier-ignore -->
-{% endblock %}
-<!-- prettier-ignore -->
-{% endcall %}
-<!-- prettier-ignore -->
-{% call container.render("px-4 py-4 text-center border-gray border-l border-r footer-bg") %}
-<span class="text-sm"
-  >Made by <a href="https://jplace.github.io/">jplace</a> with
-  <a href="https://www.11ty.dev/">11ty</a>,
-  <a href="https://tailwindcss.com/">Tailwind CSS</a> and
-  <a href="https://www.netlify.com/">Netlify</a>.</span
->
-<!-- prettier-ignore -->
-{% endcall %}
+<div class="min-h-screen flex flex-col">
+  <!-- prettier-ignore -->
+  {% call container.render("px-4 border-gray border-l border-r overflow-auto home-hero") %}
+  <a class="block no-underline mt-16 mb-4" href="/"
+    ><div class="home-hero_banner">
+      <div class="home-hero_banner-bg"></div>
+      <h1 class="home-hero_banner-text">
+        Adventure Bitch
+      </h1>
+    </div></a
+  >
+  <ul class="text-center mb-4">
+    <li class="text-lg inline-block menu-item">
+      <a class="no-underline" href="/blog">POSTS</a>
+    </li>
+    <li class="text-lg inline-block menu-item">
+      <a class="no-underline" href="/about">ABOUT</a>
+    </li>
+    <li class="text-lg inline-block menu-item">
+      <a class="no-underline" href="https://www.instagram.com/nofilterzee/"
+        >INSTAGRAM</a
+      >
+    </li>
+  </ul>
+  <!-- prettier-ignore -->
+  {% endcall %}
+  <!-- prettier-ignore -->
+  {% call container.render("flex-grow px-8 pt-6 pb-8 text-black border-gray border-l border-r bg-white") %}
+  <!-- prettier-ignore -->
+  {% block content %}
+  <!-- prettier-ignore -->
+  {% endblock %}
+  <!-- prettier-ignore -->
+  {% endcall %}
+  <!-- prettier-ignore -->
+  {% call container.render("px-4 py-4 text-center border-gray border-l border-r footer-bg") %}
+  <span class="text-sm"
+    >Made by <a href="https://jplace.github.io/">jplace</a> with
+    <a href="https://www.11ty.dev/">11ty</a>,
+    <a href="https://tailwindcss.com/">Tailwind CSS</a> and
+    <a href="https://www.netlify.com/">Netlify</a>.</span
+  >
+  <!-- prettier-ignore -->
+  {% endcall %}
+</div>
 <!-- prettier-ignore -->
 {% endblock %}
 <!-- prettier-ignore -->
