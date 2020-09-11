@@ -7,7 +7,7 @@ module.exports = {
       },
       colors: {
         "dark-gray": "#373737",
-        charcoal: "#343837",
+        charcoal: "#001a13",
         "neon-blue": "#26F7FD",
         "suave-blue": "#3D7AFD",
         aquamarine: "#6CC3E3",

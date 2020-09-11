@@ -1,0 +1,52 @@
+<!-- prettier-ignore -->
+{% import "components/container.njk" as container %}
+
+<!-- prettier-ignore -->
+{% extends "layouts/_base.njk" %}
+
+<!-- prettier-ignore -->
+{% block body %}
+<!-- prettier-ignore -->
+{% call container.render("px-6 pt-32 pb-8 shadow home-hero") %}
+<a class="block no-underline" href="/"
+  ><h1 class="mb-4 font-display font-bold text-center home-hero-text">
+    Adventure Bitch
+  </h1></a
+>
+<ul class="text-center">
+  <li class="text-lg inline-block menu-item">
+    <a href="/posts">Posts</a>
+  </li>
+  <li class="text-lg inline-block menu-item">
+    <a href="/about">About</a>
+  </li>
+  <li class="text-lg inline-block menu-item">
+    <a href="https://www.instagram.com/nofilterzee/">Instagram</a>
+  </li>
+</ul>
+<!-- prettier-ignore -->
+{% endcall %}
+<!-- prettier-ignore -->
+{% call container.render("px-8 pt-6 pb-8 mb-4 text-black rounded-b shadow bg-white") %}
+<!-- prettier-ignore -->
+{% block content %}
+<!-- prettier-ignore -->
+{% endblock %}
+<!-- prettier-ignore -->
+{% endcall %}
+<!-- prettier-ignore -->
+{% call container.render("px-4 mb-6 text-center") %}
+<span class="text-sm"
+  >Made by <a href="https://jplace.github.io/">jplace</a> with
+  <a href="https://www.11ty.dev/">11ty</a>,
+  <a href="https://tailwindcss.com/">Tailwind CSS</a> and
+  <a href="https://www.netlify.com/">Netlify</a>.</span
+>
+<!-- prettier-ignore -->
+{% endcall %}
+<!-- prettier-ignore -->
+{% endblock %}
+<!-- prettier-ignore -->
+{% block bodyScripts %}
+<!-- prettier-ignore -->
+{% endblock %}

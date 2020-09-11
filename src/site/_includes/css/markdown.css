@@ -1,0 +1,101 @@
+/* Apply styles to rendered markdown */
+
+.md-container {
+  @apply leading-snug;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  ul,
+  ol,
+  img,
+  blockquote,
+  table,
+  p,
+  hr {
+    &:not(:last-child) {
+      @apply mb-4;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-normal;
+  }
+
+  h1,
+  h2 {
+    &:not(:first-child) {
+      @apply mt-6;
+    }
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  h4 {
+    @apply text-lg;
+  }
+
+  ul {
+    @apply list-outside list-disc;
+    padding-left: 1.2em;
+  }
+
+  ol {
+    @apply list-outside list-decimal;
+    padding-left: 1em;
+  }
+
+  .list-aligned {
+    @apply list-inside;
+    padding-left: 0;
+  }
+
+  /* li {
+    ul,
+    ol {
+      @apply mt-4;
+    }
+  } */
+
+  img {
+    @apply rounded;
+  }
+
+  blockquote {
+    @apply italic;
+  }
+
+  table {
+    @apply table-auto;
+
+    th {
+      @apply px-2 pb-2;
+    }
+
+    td {
+      @apply px-2 py-2;
+    }
+
+    td {
+      @apply border;
+    }
+  }
+
+  p {
+    @apply break-words;
+  }
+}

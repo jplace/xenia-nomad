@@ -1,0 +1,8 @@
+<!-- prettier-ignore -->
+{% macro render(additionalClasses="") %}
+<div class="md:container md:mx-auto {{ additionalClasses }}">
+  <!-- prettier-ignore -->
+  {{ caller() }}
+</div>
+<!-- prettier-ignore -->
+{% endmacro %}
