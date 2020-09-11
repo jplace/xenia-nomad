@@ -23,21 +23,21 @@ title: Adventure XL
 <!-- prettier-ignore -->
 {% block body %}
 <!-- prettier-ignore -->
-{% call container("px-4 pt-16 pb-6") %}
-<h1 class="text-neon-blue font-display text-6xl text-center">
+{% call container("px-4 pt-32 pb-8 shadow home-hero") %}
+<h1 class="mb-4 font-display font-bold text-6xl text-center home-hero-text">
   Adventure Bitch
 </h1>
-<!-- prettier-ignore -->
-{% endcall %}
-<ul class="text-center">
-  <li class="inline-block menu-item"><a href="/">Home</a></li>
-  <li class="inline-block menu-item"><a href="/about">About</a></li>
-  <li class="inline-block menu-item">
+<ul style="font-size: 0;" class="text-center">
+  <li class="text-lg inline-block menu-item"><a href="/">Home</a></li>
+  <li class="text-lg inline-block menu-item"><a href="/about">About</a></li>
+  <li class="text-lg inline-block menu-item">
     <a href="https://www.instagram.com/nofilterzee/">Instagram</a>
   </li>
 </ul>
 <!-- prettier-ignore -->
-{% call container("px-4 py-6 text-black bg-white") %}
+{% endcall %}
+<!-- prettier-ignore -->
+{% call container("px-4 py-6 mb-4 text-black rounded-b shadow bg-white") %}
 <ul>
   <!-- prettier-ignore -->
   {% for post in collections.post %}
@@ -50,14 +50,13 @@ title: Adventure XL
 <!-- prettier-ignore -->
 {% endcall %}
 <!-- prettier-ignore -->
-{% call container("px-4 py-6") %}
-<ul class="text-center">
-  <li class="inline-block menu-item"><a href="/">Home</a></li>
-  <li class="inline-block menu-item"><a href="/about">About</a></li>
-  <li class="inline-block menu-item">
-    <a href="https://www.instagram.com/nofilterzee/">Instagram</a>
-  </li>
-</ul>
+{% call container("px-4 mb-6 text-center") %}
+<span class="text-sm"
+  >Made by <a href="https://jplace.github.io/">jplace</a> with
+  <a href="https://www.11ty.dev/">11ty</a>,
+  <a href="https://tailwindcss.com/">Tailwind CSS</a> and
+  <a href="https://www.netlify.com/">Netlify</a>.</span
+>
 <!-- prettier-ignore -->
 {% endcall %}
 <script>

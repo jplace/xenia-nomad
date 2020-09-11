@@ -1,6 +1,23 @@
+.home-hero {
+  color: white; /* Fallback: assume this color ON TOP of image */
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  background-position: bottom;
+}
+
+.home-hero-text {
+  background: linear-gradient(
+    86deg,
+    theme("colors.aquamarine"),
+    theme("colors.soft-amber")
+  );
+  background-clip: text;
+  color: transparent;
+}
+
 .menu-item:not(:last-child) {
   &::after {
     @apply inline-block whitespace-pre;
-    content: " | ";
+    content: " · ";
   }
 }

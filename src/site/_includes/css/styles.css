@@ -6,6 +6,7 @@
 @import "tailwindcss/components";
 
 /* Custom components */
+@import "./global.css";
 @import "./layout.css";
 
 @import "tailwindcss/utilities";
