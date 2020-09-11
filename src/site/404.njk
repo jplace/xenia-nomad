@@ -5,11 +5,13 @@ permalink: /404.html
 eleventyExcludeFromCollections: true
 ---
 
-<div>
-  <p>
-    <span>Page Not Found</span>
-  </p>
-  <p>
-    <a href="/">Back to Home</a>
-  </p>
+<!-- prettier-ignore -->
+{% extends "layouts/_page.njk" %}
+
+<!-- prettier-ignore -->
+{% block content %}
+<div class="flex items-center justify-center">
+  <h1 class="text-5xl">Page Not Found</h1>
 </div>
+<!-- prettier-ignore -->
+{% endblock %}
