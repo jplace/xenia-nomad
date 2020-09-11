@@ -6,7 +6,7 @@ date: 2020-09-11T17:55:26.787Z
 ---
 This is another post! Let's add an image to see if it's easy.
 
-![](/images/uploads/friday-at-the-ice-rink.jpeg)
+<img width="50%" src="/images/uploads/friday-at-the-ice-rink.jpeg"/>
 
 Wow amazing!
 
