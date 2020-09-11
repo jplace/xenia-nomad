@@ -3,16 +3,7 @@ title: Adventure XL
 ---
 
 <!-- prettier-ignore -->
-{% extends "layouts/_base.njk" %}
-
-<!-- prettier-ignore -->
-{% macro container(additionalClasses="") %}
-<div class="md:container md:mx-auto {{ additionalClasses }}">
-  <!-- prettier-ignore -->
-  {{ caller() }}
-</div>
-<!-- prettier-ignore -->
-{% endmacro %}
+{% extends "layouts/_page.njk" %}
 
 <!-- prettier-ignore -->
 {% block headScripts %}
@@ -21,23 +12,7 @@ title: Adventure XL
 {% endblock %}
 
 <!-- prettier-ignore -->
-{% block body %}
-<!-- prettier-ignore -->
-{% call container("px-4 pt-32 pb-8 shadow home-hero") %}
-<h1 class="mb-4 font-display font-bold text-6xl text-center home-hero-text">
-  Adventure Bitch
-</h1>
-<ul style="font-size: 0;" class="text-center">
-  <li class="text-lg inline-block menu-item"><a href="/">Home</a></li>
-  <li class="text-lg inline-block menu-item"><a href="/about">About</a></li>
-  <li class="text-lg inline-block menu-item">
-    <a href="https://www.instagram.com/nofilterzee/">Instagram</a>
-  </li>
-</ul>
-<!-- prettier-ignore -->
-{% endcall %}
-<!-- prettier-ignore -->
-{% call container("px-4 py-6 mb-4 text-black rounded-b shadow bg-white") %}
+{% block content %}
 <ul>
   <!-- prettier-ignore -->
   {% for post in collections.post %}
@@ -48,17 +23,10 @@ title: Adventure XL
   {% endfor %}
 </ul>
 <!-- prettier-ignore -->
-{% endcall %}
+{% endblock %}
+
 <!-- prettier-ignore -->
-{% call container("px-4 mb-6 text-center") %}
-<span class="text-sm"
-  >Made by <a href="https://jplace.github.io/">jplace</a> with
-  <a href="https://www.11ty.dev/">11ty</a>,
-  <a href="https://tailwindcss.com/">Tailwind CSS</a> and
-  <a href="https://www.netlify.com/">Netlify</a>.</span
->
-<!-- prettier-ignore -->
-{% endcall %}
+{% block bodyScripts %}
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", (user) => {

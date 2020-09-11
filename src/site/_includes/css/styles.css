@@ -8,6 +8,7 @@
 /* Custom components */
 @import "./global.css";
 @import "./layout.css";
+@import "./markdown.css";
 
 @import "tailwindcss/utilities";
 
