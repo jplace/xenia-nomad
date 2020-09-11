@@ -3,6 +3,7 @@ title: Adventure Bitch
 pagination:
   data: collections.post
   size: 10
+  reverse: true
   alias: posts
 ---
 
@@ -14,8 +15,8 @@ pagination:
 <h1 class="text-2xl lg:text-5xl leading-tight mb-4">Posts</h1>
 <ul>
   <!-- prettier-ignore -->
-  {% for post in collections.post %}
-  <li>
+  {% for post in posts %}
+  <li class="mb-4">
     <a class="block no-underline" href="{{ post.url }}"
       ><p>
         <span class="underline">{{ post.data.title }}</span>

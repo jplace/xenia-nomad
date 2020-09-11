@@ -17,3 +17,7 @@ Serve the site locally using Browsersync.
 ```
 npm run serve
 ```
+
+## Post
+
+Go to `/admin` and login. You should be able to manage posts and media there.
