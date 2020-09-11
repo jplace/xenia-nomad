@@ -1,52 +1,41 @@
 .home-hero {
-  /* color: white; Fallback: assume this color ON TOP of image */
+  z-index: -3;
+  @apply relative;
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: bottom;
-  /* background-color: black; */
 }
 
-/* .home-hero-text {
-  background: linear-gradient(
-    86deg,
-    theme("colors.aquamarine"),
-    theme("colors.soft-amber")
-  );
-  background-clip: text;
-  color: transparent;
-} */
-
 .home-hero-text {
-  position: relative;
-  font-size: 10em;
+  @apply relative;
+  @apply font-display font-bold;
+  font-size: 9em;
+  @apply text-center text-transparent;
+  @apply leading-tight;
   background-clip: text;
-  color: transparent;
   -webkit-text-fill-color: transparent;
   background-image: url("/images/hero.jpg");
   background-size: cover;
   background-position: bottom;
-}
 
-.home-hero-text::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: inherit;
-  z-index: -2;
-}
+  &::before {
+    z-index: -2;
+    @apply absolute;
+    content: "";
+    @apply top-0 right-0 bottom-0 left-0;
+    background-image: inherit;
+  }
 
-.home-hero-text::after {
-  position: absolute;
-  content: "";
-  top: 0.125em;
-  right: 0.125em;
-  bottom: 0.125em;
-  left: 0.125em;
-  background-color: black;
-  z-index: -1;
+  &::after {
+    z-index: -1;
+    @apply absolute;
+    content: "";
+    top: 0.125em;
+    right: 0.125em;
+    bottom: 0.125em;
+    left: 0.125em;
+    background-color: black;
+  }
 }
 
 .menu-item:not(:last-child) {

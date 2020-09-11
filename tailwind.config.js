@@ -15,6 +15,7 @@ module.exports = {
         "soft-amber": "#CBC2AC",
         finch: "#5A6349",
         "dark-indigo": "#1F0954",
+        "forest-green": "#194d33",
       },
     },
   },
