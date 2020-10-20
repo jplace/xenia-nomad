@@ -1,49 +1,68 @@
 .home-hero {
-  background-image: url("/images/hero.jpg");
-  background-size: cover;
-  background-position: bottom;
+  @apply relative;
+  height: 512px;
+  background-color: theme("colors.soft-black");
+  @apply overflow-hidden;
 
-  &_banner {
-    @apply relative;
-    background-image: url("/images/hero.jpg");
-    background-size: cover;
-  }
-
-  &_banner-bg {
-    z-index: 1;
+  &_menu {
     @apply absolute;
-    top: 0.125em;
-    right: 0.125em;
-    bottom: 0.125em;
-    left: 0.125em;
-    background-color: black;
+    top: 20px;
+    left: 0px;
+    width: 384px;
+    @apply bg-white;
+    transform: rotate(10deg);
 
-    @screen lg {
-      top: 0.75em;
-      right: 0.75em;
-      bottom: 0.75em;
-      left: 0.75em;
+    &_img {
+      width: 100%;
+      padding: 32px 32px 0 32px;
+    }
+
+    &_ul {
+      @apply flex items-center justify-center;
+      height: 64px;
+      @apply text-black;
     }
   }
 
-  &_banner-text {
-    z-index: 2;
-    @apply relative;
-    @apply font-display font-bold italic;
-    font-size: 3em;
-    @apply text-center text-white;
-    @apply leading-tight;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: url("/images/hero.jpg");
-    background-size: cover;
-    background-position: bottom;
+  &_img2 {
+    @apply absolute;
+    top: -16px;
+    left: 400px;
+    width: 284px;
+    transform: rotate(-4deg);
+  }
 
-    @screen lg {
-      font-size: 9em;
-    }
+  &_img3 {
+    @apply absolute;
+    top: -1px;
+    left: 713px;
+    width: 320px;
+    transform: rotate(15deg);
+  }
+
+  &_img4 {
+    @apply absolute;
+    top: -13px;
+    left: 1000px;
+    width: 256px;
+    transform: rotate(-10deg);
+  }
+
+  &_text {
+    @apply absolute;
+    bottom: 0;
+    right: 0;
+    width: 880px;
+    font-size: 160px;
+    @apply font-header leading-none text-white text-center;
   }
 }
+
+.polaroid {
+  padding: 32px 32px 64px 32px;
+  @apply bg-white;
+}
+
 
 .menu-item:not(:last-child) {
   &::after {
@@ -53,9 +72,5 @@
 }
 
 .footer-bg {
-  background-image: linear-gradient(
-    to bottom right,
-    theme("colors.forest-green"),
-    theme("colors.finch")
-  );
+  background-color: theme("colors.soft-black");
 }

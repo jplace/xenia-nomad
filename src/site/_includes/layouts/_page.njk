@@ -8,28 +8,27 @@
 {% block body %}
 <div class="min-h-screen flex flex-col">
   <!-- prettier-ignore -->
-  {% call container.render("px-4 border-gray border-l border-r overflow-auto home-hero") %}
-  <a class="block no-underline mt-16 mb-4" href="/"
-    ><div class="home-hero_banner">
-      <div class="home-hero_banner-bg"></div>
-      <h1 class="home-hero_banner-text">
-        Adventure Bitch
-      </h1>
-    </div></a
-  >
-  <ul class="text-center mb-4">
-    <li class="inline-block text-lg text-white menu-item">
-      <a class="no-underline" href="/blog">POSTS</a>
-    </li>
-    <li class="inline-block text-lg text-white menu-item">
-      <a class="no-underline" href="/about">ABOUT</a>
-    </li>
-    <li class="inline-block text-lg text-white menu-item">
-      <a class="no-underline" href="https://www.instagram.com/nofilterzee/"
-        >INSTAGRAM</a
-      >
-    </li>
-  </ul>
+  {% call container.render("border-gray border-l border-r home-hero") %}
+    <div class="home-hero_menu">
+      <img src="/images/hero/hero-1.jpg" class="home-hero_menu_img"/>
+      <ul class="home-hero_menu_ul">
+        <li class="inline-block text-lg menu-item">
+          <a class="no-underline" href="/blog">POSTS</a>
+        </li>
+        <li class="inline-block text-lg menu-item">
+          <a class="no-underline" href="/about">ABOUT</a>
+        </li>
+        <li class="inline-block text-lg menu-item">
+          <a class="no-underline" href="https://www.instagram.com/nofilterzee/"
+            >INSTAGRAM</a>
+        </li>
+      </ul>
+    </div>
+    <img src="/images/hero/hero-2.jpg" class="polaroid home-hero_img2"/>
+    <img src="/images/hero/hero-3.jpg" class="polaroid home-hero_img3"/>
+    <img src="/images/hero/hero-4.jpg" class="polaroid home-hero_img4"/>
+    <h1 class="home-hero_text"><a class="no-underline" href="/">Adventure Bitch</a></h1>
+    
   <!-- prettier-ignore -->
   {% endcall %}
   <!-- prettier-ignore -->
