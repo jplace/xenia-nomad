@@ -1,11 +1,20 @@
 .home-hero {
-  @apply relative;
   height: 320px;
-  background-color: theme("colors.soft-black");
-  @apply overflow-hidden;
 
   @screen lg {
     height: 512px;
+  }
+
+  &_container {
+    @apply relative;
+    width: 320px;
+    height: 100%;
+    margin: 0 auto;
+
+    @screen md {
+      width: 100%;
+      margin: auto;
+    }
   }
 
   &_menu {
@@ -16,19 +25,27 @@
     left: 0;
     width: 100%;
 
+    @screen md {
+      top: auto;
+      right: auto;
+      bottom: 8px;
+      left: 16px;
+      width: 280px;
+      transform: rotate(10deg);
+    }
+
     @screen lg {
       top: 20px;
       right: auto;
       bottom: auto;
       left: 0;
       width: 384px;
-      transform: rotate(10deg);
     }
 
     &_img {
       @apply hidden;
 
-      @screen lg {
+      @screen md {
         @apply block;
         padding: 32px 32px 0 32px;
         @apply bg-white;
@@ -40,7 +57,7 @@
       height: 64px;
       @apply text-white;
 
-      @screen lg {
+      @screen md {
         @apply bg-white;
         @apply text-black;
       }
@@ -48,41 +65,100 @@
   }
 
   &_img2 {
-    @apply hidden;
     @apply absolute;
-    top: -16px;
-    left: 400px;
-    width: 284px;
+    top: 96px;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 128px;
     transform: rotate(-4deg);
 
+    @screen md {
+      top: -25px;
+      right: auto;
+      bottom: auto;
+      left: 332px;
+      width: 180px;
+      transform: rotate(-7deg);
+    }
+
     @screen lg {
-      @apply block;
+      top: 4px;
+      right: auto;
+      bottom: auto;
+      left: 400px;
+      width: 284px;
+      transform: rotate(-4deg);
+    }
+
+    @screen xl {
+      top: -16px;
+      right: auto;
+      bottom: auto;
+      left: 400px;
+      width: 284px;
+      transform: rotate(-4deg);
     }
   }
 
   &_img3 {
-    @apply hidden;
     @apply absolute;
-    top: -1px;
-    left: 713px;
-    width: 320px;
+    top: 96px;
+    right: auto;
+    bottom: auto;
+    left: 104px;
+    width: 128px;
     transform: rotate(15deg);
 
+    @screen md {
+      top: -10px;
+      right: auto;
+      bottom: auto;
+      left: 541px;
+      width: 212px;
+      transform: rotate(15deg);
+    }
+
     @screen lg {
-      @apply block;
+      top: -7px;
+      right: auto;
+      bottom: auto;
+      left: 713px;
+      width: 384px;
+      transform: rotate(15deg);
+    }
+
+    @screen xl {
+      top: -1px;
+      right: auto;
+      bottom: auto;
+      left: 713px;
+      width: 320px;
+      transform: rotate(15deg);
     }
   }
 
   &_img4 {
-    @apply hidden;
     @apply absolute;
-    top: -13px;
-    left: 1000px;
-    width: 256px;
+    top: 88px;
+    right: auto;
+    bottom: auto;
+    left: 200px;
+    width: 128px;
     transform: rotate(-10deg);
 
-    @screen lg {
+    @screen md { 
+      @apply hidden;
+    }
+
+    @screen xl {
       @apply block;
+      top: -13px;
+      right: auto;
+      bottom: auto;
+      left: 1000px;
+      width: 256px;
+      transform: rotate(-10deg);
     }
   }
 
@@ -96,7 +172,25 @@
     font-size: 64px;
     @apply font-header leading-none text-white text-center;
 
+    @screen md {
+      top: auto;
+      right: 0;
+      bottom: 12px;
+      left: auto;
+      width: 475px;
+      font-size: 96px;
+    }
+
     @screen lg {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: auto;
+      width: 664px;
+      font-size: 128px;
+    }
+
+    @screen xl {
       top: auto;
       right: 0;
       bottom: 0;
@@ -110,6 +204,10 @@
 .polaroid {
   padding: 16px 16px 32px 16px;
   @apply bg-white;
+
+  @screen md {
+    padding: 24px 24px 40px 24px;
+  }
 
   @screen lg {
     padding: 32px 32px 64px 32px;

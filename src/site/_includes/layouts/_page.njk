@@ -8,7 +8,8 @@
 {% block body %}
 <div class="min-h-screen flex flex-col">
   <!-- prettier-ignore -->
-  {% call container.render("border-gray border-l border-r home-hero") %}
+  {% call container.render("home-hero md:border-gray md:border-l md:border-r bg-soft-black overflow-hidden") %}
+  <div class="home-hero_container">
     <div class="home-hero_menu">
       <img src="/images/hero/hero-1.jpg" class="home-hero_menu_img"/>
       <ul class="home-hero_menu_ul">
@@ -27,8 +28,8 @@
     <img src="/images/hero/hero-2.jpg" class="polaroid home-hero_img2"/>
     <img src="/images/hero/hero-3.jpg" class="polaroid home-hero_img3"/>
     <img src="/images/hero/hero-4.jpg" class="polaroid home-hero_img4"/>
-    <h1 class="home-hero_text"><a class="no-underline" href="/">Adventure Bitch</a></h1>
-    
+    <h1 class="home-hero_text"><a class="no-underline" href="/">Adventure Bitch</a></h1>  
+  </div>
   <!-- prettier-ignore -->
   {% endcall %}
   <!-- prettier-ignore -->
