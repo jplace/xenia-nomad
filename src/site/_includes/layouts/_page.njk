@@ -11,7 +11,10 @@
   {% call container.render("home-hero md:border-gray md:border-l md:border-r bg-soft-black overflow-hidden") %}
   <div class="home-hero_container">
     <div class="home-hero_menu">
-      <img src="/images/hero/hero-1.jpg" class="home-hero_menu_img"/>
+      <!-- <img src="/images/hero/hero-1.jpg" class="home-hero_menu_img"/> -->
+      <div class="home-hero_menu_img">
+        <img src="/images/hero/hero-1.jpg" />
+      </div>
       <ul class="home-hero_menu_ul">
         <li class="inline-block text-lg menu-item">
           <a class="no-underline" href="/blog">POSTS</a>
@@ -20,15 +23,20 @@
           <a class="no-underline" href="/about">ABOUT</a>
         </li>
         <li class="inline-block text-lg menu-item">
-          <a class="no-underline" href="https://www.instagram.com/_adventurebitch/"
-            >INSTAGRAM</a>
+          <a
+            class="no-underline"
+            href="https://www.instagram.com/_adventurebitch/"
+            >INSTAGRAM</a
+          >
         </li>
       </ul>
     </div>
-    <img src="/images/hero/hero-2.jpg" class="polaroid home-hero_img2"/>
-    <img src="/images/hero/hero-3.jpg" class="polaroid home-hero_img3"/>
-    <img src="/images/hero/hero-4.jpg" class="polaroid home-hero_img4"/>
-    <h1 class="home-hero_text"><a class="no-underline" href="/">Adventure Bitch</a></h1>  
+    <img src="/images/hero/hero-2.jpg" class="polaroid home-hero_img2" />
+    <img src="/images/hero/hero-3.jpg" class="polaroid home-hero_img3" />
+    <img src="/images/hero/hero-4.jpg" class="polaroid home-hero_img4" />
+    <h1 class="home-hero_text">
+      <a class="no-underline" href="/">Adventure Bitch</a>
+    </h1>
   </div>
   <!-- prettier-ignore -->
   {% endcall %}
