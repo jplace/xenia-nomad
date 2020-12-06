@@ -1,5 +1,5 @@
 module.exports = {
   url: "https://www.adventurebitch.blog", // use this only when absolute URLs are required
   defaultDescription:
-    "Currently on a roadtrip exploring the beautiful national parks and surrounding nature of the western states.",
+    "An adventurous bitch, making travel happen no matter the circumstances.",
 };
