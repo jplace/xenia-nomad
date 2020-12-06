@@ -15,6 +15,7 @@
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
     "autoprefixer": "^9.8.1",
+    "htm": "^3.0.4",
     "luxon": "^1.24.1",
     "markdown-it": "^11.0.0",
     "nunjucks": "^3.2.1",
@@ -22,6 +23,8 @@
     "postcss-mixins": "^6.2.3",
     "postcss-nesting": "^7.0.1",
     "postcss-prettify": "^0.3.4",
+    "preact": "^10.5.7",
+    "preact-render-to-string": "^5.1.12",
     "prettier": "^2.0.5",
     "tailwindcss": "^1.8.7"
   }
