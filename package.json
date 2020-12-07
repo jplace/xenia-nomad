@@ -19,6 +19,7 @@
     "htm": "^3.0.4",
     "luxon": "^1.24.1",
     "markdown-it": "^11.0.0",
+    "memoizee": "^0.4.14",
     "nunjucks": "^3.2.1",
     "postcss-import": "^12.0.1",
     "postcss-mixins": "^6.2.3",

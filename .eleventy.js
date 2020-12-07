@@ -3,6 +3,41 @@ const markdownIt = require("markdown-it");
 const fs = require("fs");
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
+const memoize = require("memoizee");
+
+const thing = memoize(
+  async function (src, alt) {
+    console.log(src);
+    if (alt === undefined) {
+      throw new Error(`Missing \`alt\` on fastImage from: ${src}`);
+    }
+
+    let stats = await Image(src, {
+      widths: [350, 640, 960, 1200, null],
+      formats: ["webp", "jpeg"],
+      urlPath: "/images/",
+      outputDir: "./dist/images/",
+    });
+    let lowestSrc = stats["jpeg"][0];
+
+    // Iterate over formats and widths
+    return `<picture>
+    ${Object.values(stats)
+      .map((imageFormat) => {
+        return `  <source type="image/${
+          imageFormat[0].format
+        }" srcset="${imageFormat.map((entry) => entry.srcset).join(", ")}"/>`;
+      })
+      .join("\n")}
+      <img
+        src="${lowestSrc.url}"
+        width="${lowestSrc.width}"
+        height="${lowestSrc.height}"
+        alt="${alt}"/>
+    </picture>`;
+  },
+  { async: true }
+);
 
 module.exports = function (config) {
   // Adding this just for the absoluteUrl filter used in 11ty examples
@@ -37,37 +72,10 @@ module.exports = function (config) {
   });
 
   // Optimized images
-  config.addAsyncShortcode("fastImage", async function (src, alt) {
-    if (alt === undefined) {
-      throw new Error(`Missing \`alt\` on fastImage from: ${src}`);
-    }
-
-    let stats = await Image(src, {
-      widths: [350, 640, 960, 1200, null],
-      formats: ["webp", "jpeg"],
-      urlPath: "/images/",
-      outputDir: "./dist/images/",
-    });
-    let lowestSrc = stats["jpeg"][0];
-
-    // Iterate over formats and widths
-    return `<picture>
-        ${Object.values(stats)
-          .map((imageFormat) => {
-            return `  <source type="image/${
-              imageFormat[0].format
-            }" srcset="${imageFormat
-              .map((entry) => entry.srcset)
-              .join(", ")}"/>`;
-          })
-          .join("\n")}
-          <img
-            src="${lowestSrc.url}"
-            width="${lowestSrc.width}"
-            height="${lowestSrc.height}"
-            alt="${alt}"/>
-        </picture>`;
-  });
+  config.addAsyncShortcode(
+    "fastImage",
+    async (...args) => await thing(...args)
+  );
 
   // Pass through static assets
   config.addPassthroughCopy("./src/site/admin");

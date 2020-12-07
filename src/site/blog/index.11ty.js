@@ -1,6 +1,6 @@
 const { html } = require(`htm/preact`);
 const pageOf = require("../_includes/util/page-of");
-const Page = require("../_includes/components/Page");
+const _Page = require("../_includes/components/_Page");
 
 module.exports = class ThisPage {
   data() {
@@ -15,9 +15,10 @@ module.exports = class ThisPage {
     };
   }
 
-  render(data) {
-    const body = html`
-      <${Page}>
+  async render(data) {
+    const Page = _Page.bind(this);
+    const body = await Page({
+      children: html`
         <h1 class="text-2xl lg:text-5xl leading-tight mb-4">Posts</h1>
         <ul>
           ${data.posts.map(
@@ -55,8 +56,8 @@ module.exports = class ThisPage {
             </li>
           `}
         </ul>
-      <//>
-    `;
+      `,
+    });
     return pageOf({ data, body });
   }
 };

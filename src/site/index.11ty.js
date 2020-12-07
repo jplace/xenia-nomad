@@ -1,6 +1,6 @@
 const { html } = require(`htm/preact`);
 const pageOf = require("./_includes/util/page-of");
-const Page = require("./_includes/components/page");
+const _Page = require("./_includes/components/_Page");
 
 const aboutMd = `You want to travel but don’t have the money. 
 
@@ -21,6 +21,8 @@ module.exports = class ThisPage {
   }
 
   async render(data) {
+    const Page = _Page.bind(this);
+
     const headScripts = html`
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     `;
@@ -37,16 +39,18 @@ module.exports = class ThisPage {
         }
       </script>
     `;
-    const body = html`
-      <${Page} bodyScripts="${bodyScripts}">
+    const body = await Page({
+      children: html`
         <div>
           <h1 class="text-2xl lg:text-5xl leading-tight mb-4">About</h1>
           <div class="md-container">
             ${html([this.markdown(aboutMd)])}
           </div>
         </div>
-      <//>
-    `;
+      `,
+      bodyScripts,
+    });
+
     return pageOf({ data, headScripts, body });
   }
 };
