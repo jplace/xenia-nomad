@@ -58,14 +58,14 @@ module.exports = function (config) {
               imageFormat[0].format
             }" srcset="${imageFormat
               .map((entry) => entry.srcset)
-              .join(", ")}">`;
+              .join(", ")}"/>`;
           })
           .join("\n")}
           <img
             src="${lowestSrc.url}"
             width="${lowestSrc.width}"
             height="${lowestSrc.height}"
-            alt="${alt}">
+            alt="${alt}"/>
         </picture>`;
   });
 

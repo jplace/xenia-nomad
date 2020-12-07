@@ -44,12 +44,6 @@ module.exports = class ThisPage {
           <div class="md-container">
             ${html([this.markdown(aboutMd)])}
           </div>
-          ${html([
-            await this.fastImage(
-              "./src/site/images/uploads/friday-at-the-ice-rink.jpeg",
-              ""
-            ),
-          ])}
         </div>
       <//>
     `;
