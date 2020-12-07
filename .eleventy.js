@@ -37,7 +37,7 @@ module.exports = function (config) {
   });
 
   // Optimized images
-  config.addNunjucksAsyncShortcode("fastImage", async function (src, alt) {
+  config.addAsyncShortcode("fastImage", async function (src, alt) {
     if (alt === undefined) {
       throw new Error(`Missing \`alt\` on fastImage from: ${src}`);
     }
