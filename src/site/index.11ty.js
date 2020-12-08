@@ -26,19 +26,6 @@ module.exports = class ThisPage {
     const headScripts = html`
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     `;
-    const bodyScripts = html`
-      <script>
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
-          });
-        }
-      </script>
-    `;
     const body = await Page({
       children: html`
         <div>
@@ -48,7 +35,19 @@ module.exports = class ThisPage {
           </div>
         </div>
       `,
-      bodyScripts,
+      bodyScripts: html`
+        <script>
+          if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", (user) => {
+              if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                  document.location.href = "/admin/";
+                });
+              }
+            });
+          }
+        </script>
+      `,
     });
 
     return pageOf({ data, headScripts, body });
