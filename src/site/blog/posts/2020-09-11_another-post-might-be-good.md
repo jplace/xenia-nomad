@@ -7,7 +7,7 @@ date: 2020-09-11T17:55:26.787Z
 
 This is another post! Let's add an image to see if it's easy.
 
-<img width="50%" src="/images/uploads/friday-at-the-ice-rink.jpeg"/>
+{% fastImage "./src/site/images/uploads/friday-at-the-ice-rink.jpeg", "" %}
 
 Wow amazing!
 

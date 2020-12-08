@@ -4,6 +4,7 @@ const fs = require("fs");
 const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 const memoize = require("memoizee");
+const path = require("path");
 
 module.exports = function (config) {
   // Adding this just for the absoluteUrl filter used in 11ty examples
@@ -51,6 +52,14 @@ module.exports = function (config) {
           formats: ["webp", "jpeg"],
           urlPath: "/images/",
           outputDir: "./dist/images/",
+          filenameFormat: function (id, src, width, format) {
+            const ext = path.extname(src);
+            const name = path.basename(src, ext);
+            if (width) {
+              return `${name}-${id}-${width}.${format}`;
+            }
+            return `${name}-${id}.${format}`;
+          },
         });
         let lowestSrc = stats["jpeg"][0];
 
@@ -69,7 +78,8 @@ module.exports = function (config) {
             src="${lowestSrc.url}"
             width="${lowestSrc.width}"
             height="${lowestSrc.height}"
-            alt="${alt}"/>
+            alt="${alt}"
+            class="w-full"/>
         </picture>`;
       },
       { promise: true }
