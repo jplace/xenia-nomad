@@ -36,7 +36,7 @@ const thing = memoize(
         alt="${alt}"/>
     </picture>`;
   },
-  { async: true }
+  { promise: true }
 );
 
 module.exports = function (config) {
