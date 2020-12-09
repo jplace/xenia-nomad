@@ -11,6 +11,7 @@ module.exports = ({
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="${metadata.defaultDescription}">
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
