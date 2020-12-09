@@ -50,8 +50,8 @@ module.exports = function (config) {
         let stats = await Image(src, {
           widths: [350, 640, 960, 1200, null],
           formats: ["webp", "jpeg"],
-          urlPath: "/images/",
-          outputDir: "./dist/images/",
+          urlPath: "/images/fast",
+          outputDir: "./dist/images/fast",
           filenameFormat: function (id, src, width, format) {
             const ext = path.extname(src);
             const name = path.basename(src, ext);
@@ -88,6 +88,7 @@ module.exports = function (config) {
 
   // Pass through static assets
   config.addPassthroughCopy("./src/site/admin");
+  config.addPassthroughCopy("./src/site/images");
   config.addPassthroughCopy("./src/site/fonts");
   config.addPassthroughCopy("./src/site/_redirects");
   config.addPassthroughCopy("./src/site/_headers");
