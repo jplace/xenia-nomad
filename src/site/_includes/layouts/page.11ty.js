@@ -13,7 +13,7 @@ module.exports = class ThisPage {
     const body = await Page({
       children: html`
         <div class="mb-8">
-          <h1 class="text-2xl lg:text-5xl leading-tight mb-2">${data.title}</h1>
+          <h1 class="text-2xl lg:text-5xl leading-tight">${data.title}</h1>
         </div>
         <div class="md-container">
           ${html([this.markdown(data.content)])}
