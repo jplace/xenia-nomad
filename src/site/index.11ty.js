@@ -1,6 +1,7 @@
 const { html } = require(`htm/preact`);
 const pageOf = require("./_includes/util/page-of");
 const _Page = require("./_includes/components/_Page");
+const { default: htm } = require("htm");
 
 const aboutMd = `You want to travel but don’t have the money. 
 
@@ -23,7 +24,7 @@ module.exports = class ThisPage {
   async render(data) {
     const Page = _Page.bind(this);
 
-    const headScripts = html`
+    const headScripts = `
       <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     `;
     const body = await Page({
@@ -35,21 +36,21 @@ module.exports = class ThisPage {
           </div>
         </div>
       `,
-      bodyScripts: html`
-        <script>
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", (user) => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/";
-                });
-              }
-            });
-          }
-        </script>
-      `,
     });
+    const bodyScripts = `
+      <script>
+        if (window.netlifyIdentity) {
+          window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+              window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+              });
+            }
+          });
+        }
+      </script>
+    `;
 
-    return pageOf({ data, headScripts, body });
+    return pageOf({ data, headScripts, body, bodyScripts });
   }
 };

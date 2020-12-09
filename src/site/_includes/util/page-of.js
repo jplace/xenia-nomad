@@ -2,9 +2,10 @@ const render = require("preact-render-to-string");
 
 module.exports = ({
   data: { title, metadata },
-  body,
   headScripts,
   headStyles,
+  body,
+  bodyScripts,
 }) => `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,12 +36,13 @@ module.exports = ({
       name="twitter:description"
       content="${metadata.defaultDescription}"
     />
-    ${headScripts ? render(headScripts) : ""}
+    ${headScripts || ""}
     <link rel="stylesheet" href="/css/styles.css" />
-    ${headStyles ? render(headStyles) : ""}
+    ${headStyles || ""}
     <title>${title}</title>
   </head>
   <body class="text-body text-black bg-light-gray">
     ${body ? render(body) : ""}
+    ${bodyScripts || ""}
   </body>
 </html>`;

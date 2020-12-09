@@ -2,7 +2,7 @@ const { html } = require(`htm/preact`);
 
 const Container = require("./Container");
 
-module.exports = async function ({ bodyScripts, children }) {
+module.exports = async function ({ children }) {
   return html`
     <div class="min-h-screen flex flex-col">
       <${Container}
@@ -67,6 +67,5 @@ module.exports = async function ({ bodyScripts, children }) {
         >
       <//>
     </div>
-    ${bodyScripts}
   `;
 };
